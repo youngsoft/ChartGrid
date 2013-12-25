@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[HXQFChartView drawPieLayer:inContext:]:HXQFChartView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(double)(radius*0.5 * (double)sin(-1* (startAngle + angle / 2)))">
+            </PersistentString>
+            <PersistentString
+               value = "startAngle/3.1415926*180">
+            </PersistentString>
+            <PersistentString
+               value = "angle/3.1415926*180">
+            </PersistentString>
+            <PersistentString
+               value = "(double)(radius*0.5 * (double)cos(-1* (startAngle + angle / 2)))">
+            </PersistentString>
+            <PersistentString
+               value = "radius*0.5">
+            </PersistentString>
+            <PersistentString
+               value = "(startAngle+angle/2)/3.1415926*180">
+            </PersistentString>
+            <PersistentString
+               value = "(double)cos(-1* (startAngle+angle/2))">
+            </PersistentString>
+            <PersistentString
+               value = "(double)sin(-1* (startAngle+angle/2))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

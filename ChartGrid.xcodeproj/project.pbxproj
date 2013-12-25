@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		282ED3D5186AC02900EBACB8 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3D0186AC02900EBACB8 /* ChartView.m */; };
+		282ED3D7186AC02900EBACB8 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3D4186AC02900EBACB8 /* GridView.m */; };
+		282ED3E5186AC05B00EBACB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3D9186AC05B00EBACB8 /* AppDelegate.m */; };
+		282ED3E6186AC05B00EBACB8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3DA186AC05B00EBACB8 /* Default-568h@2x.png */; };
+		282ED3E7186AC05B00EBACB8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3DB186AC05B00EBACB8 /* Default.png */; };
+		282ED3E8186AC05B00EBACB8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3DC186AC05B00EBACB8 /* Default@2x.png */; };
+		282ED3EA186AC05B00EBACB8 /* IndexViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3E0186AC05B00EBACB8 /* IndexViewCell.m */; };
+		282ED3EB186AC05B00EBACB8 /* IndexViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3E1186AC05B00EBACB8 /* IndexViewCell.xib */; };
+		282ED3EC186AC05B00EBACB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3E3186AC05B00EBACB8 /* ViewController.m */; };
+		282ED3ED186AC05B00EBACB8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3E4186AC05B00EBACB8 /* ViewController.xib */; };
+		282ED3F7186AC07500EBACB8 /* chartIndexColorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3F0186AC07500EBACB8 /* chartIndexColorList.plist */; };
+		282ED3F8186AC07500EBACB8 /* floatback.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3F1186AC07500EBACB8 /* floatback.png */; };
+		282ED3F9186AC07500EBACB8 /* floatclose.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3F2186AC07500EBACB8 /* floatclose.png */; };
+		282ED3FA186AC07500EBACB8 /* indexColCellHL.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3F3186AC07500EBACB8 /* indexColCellHL.png */; };
+		282ED3FB186AC07500EBACB8 /* indexColCellNL.png in Resources */ = {isa = PBXBuildFile; fileRef = 282ED3F4186AC07500EBACB8 /* indexColCellNL.png */; };
+		282ED3FC186AC07500EBACB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED3F5186AC07500EBACB8 /* main.m */; };
+		282ED40C186AC3EE00EBACB8 /* GetChartIndexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 282ED40A186AC3EE00EBACB8 /* GetChartIndexColor.m */; };
+		283B12C61692D56A001407DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283B12C51692D56A001407DE /* UIKit.framework */; };
+		283B12C81692D56A001407DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283B12C71692D56A001407DE /* Foundation.framework */; };
+		283B12CA1692D56A001407DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283B12C91692D56A001407DE /* CoreGraphics.framework */; };
+		283B12F31692F388001407DE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283B12F21692F388001407DE /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		282ED3CF186AC02900EBACB8 /* ChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChartView.h; path = ChartGrid/ChartView.h; sourceTree = SOURCE_ROOT; };
+		282ED3D0186AC02900EBACB8 /* ChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChartView.m; path = ChartGrid/ChartView.m; sourceTree = SOURCE_ROOT; };
+		282ED3D3186AC02900EBACB8 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridView.h; path = ChartGrid/GridView.h; sourceTree = SOURCE_ROOT; };
+		282ED3D4186AC02900EBACB8 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GridView.m; path = ChartGrid/GridView.m; sourceTree = SOURCE_ROOT; };
+		282ED3D8186AC05B00EBACB8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChartGrid/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		282ED3D9186AC05B00EBACB8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChartGrid/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		282ED3DA186AC05B00EBACB8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "ChartGrid/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		282ED3DB186AC05B00EBACB8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ChartGrid/Default.png; sourceTree = SOURCE_ROOT; };
+		282ED3DC186AC05B00EBACB8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "ChartGrid/Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		282ED3DD186AC05B00EBACB8 /* GetChartIndexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetChartIndexColor.h; path = ChartGrid/GetChartIndexColor.h; sourceTree = SOURCE_ROOT; };
+		282ED3E0186AC05B00EBACB8 /* IndexViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IndexViewCell.m; path = ChartGrid/IndexViewCell.m; sourceTree = SOURCE_ROOT; };
+		282ED3E1186AC05B00EBACB8 /* IndexViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IndexViewCell.xib; path = ChartGrid/IndexViewCell.xib; sourceTree = SOURCE_ROOT; };
+		282ED3E2186AC05B00EBACB8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ChartGrid/ViewController.h; sourceTree = SOURCE_ROOT; };
+		282ED3E3186AC05B00EBACB8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ChartGrid/ViewController.m; sourceTree = SOURCE_ROOT; };
+		282ED3E4186AC05B00EBACB8 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ChartGrid/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		282ED3EE186AC07500EBACB8 /* ChartGrid-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ChartGrid-Info.plist"; path = "ChartGrid/ChartGrid-Info.plist"; sourceTree = SOURCE_ROOT; };
+		282ED3EF186AC07500EBACB8 /* ChartGrid-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ChartGrid-Prefix.pch"; path = "ChartGrid/ChartGrid-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		282ED3F0186AC07500EBACB8 /* chartIndexColorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = chartIndexColorList.plist; path = ChartGrid/chartIndexColorList.plist; sourceTree = SOURCE_ROOT; };
+		282ED3F1186AC07500EBACB8 /* floatback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floatback.png; path = ChartGrid/floatback.png; sourceTree = SOURCE_ROOT; };
+		282ED3F2186AC07500EBACB8 /* floatclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floatclose.png; path = ChartGrid/floatclose.png; sourceTree = SOURCE_ROOT; };
+		282ED3F3186AC07500EBACB8 /* indexColCellHL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indexColCellHL.png; path = ChartGrid/indexColCellHL.png; sourceTree = SOURCE_ROOT; };
+		282ED3F4186AC07500EBACB8 /* indexColCellNL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indexColCellNL.png; path = ChartGrid/indexColCellNL.png; sourceTree = SOURCE_ROOT; };
+		282ED3F5186AC07500EBACB8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChartGrid/main.m; sourceTree = SOURCE_ROOT; };
+		282ED40A186AC3EE00EBACB8 /* GetChartIndexColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetChartIndexColor.m; sourceTree = "<group>"; };
+		282ED40B186AC3EE00EBACB8 /* IndexViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewCell.h; sourceTree = "<group>"; };
+		283B12C11692D56A001407DE /* ChartGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		283B12C51692D56A001407DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		283B12C71692D56A001407DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		283B12C91692D56A001407DE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		283B12F21692F388001407DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		283B12BE1692D56A001407DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283B12F31692F388001407DE /* QuartzCore.framework in Frameworks */,
+				283B12C61692D56A001407DE /* UIKit.framework in Frameworks */,
+				283B12C81692D56A001407DE /* Foundation.framework in Frameworks */,
+				283B12CA1692D56A001407DE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		283B12B61692D56A001407DE = {
+			isa = PBXGroup;
+			children = (
+				283B12CB1692D56A001407DE /* ChartGrid */,
+				283B12C41692D56A001407DE /* Frameworks */,
+				283B12C21692D56A001407DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		283B12C21692D56A001407DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				283B12C11692D56A001407DE /* ChartGrid.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		283B12C41692D56A001407DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				283B12F21692F388001407DE /* QuartzCore.framework */,
+				283B12C51692D56A001407DE /* UIKit.framework */,
+				283B12C71692D56A001407DE /* Foundation.framework */,
+				283B12C91692D56A001407DE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		283B12CB1692D56A001407DE /* ChartGrid */ = {
+			isa = PBXGroup;
+			children = (
+				282ED40A186AC3EE00EBACB8 /* GetChartIndexColor.m */,
+				282ED40B186AC3EE00EBACB8 /* IndexViewCell.h */,
+				282ED3D8186AC05B00EBACB8 /* AppDelegate.h */,
+				282ED3D9186AC05B00EBACB8 /* AppDelegate.m */,
+				282ED3DA186AC05B00EBACB8 /* Default-568h@2x.png */,
+				282ED3DB186AC05B00EBACB8 /* Default.png */,
+				282ED3DC186AC05B00EBACB8 /* Default@2x.png */,
+				282ED3DD186AC05B00EBACB8 /* GetChartIndexColor.h */,
+				282ED3E0186AC05B00EBACB8 /* IndexViewCell.m */,
+				282ED3E1186AC05B00EBACB8 /* IndexViewCell.xib */,
+				282ED3E2186AC05B00EBACB8 /* ViewController.h */,
+				282ED3E3186AC05B00EBACB8 /* ViewController.m */,
+				282ED3E4186AC05B00EBACB8 /* ViewController.xib */,
+				282ED3F5186AC07500EBACB8 /* main.m */,
+				283B12E81692D595001407DE /* ChartGridWidget */,
+				283B12CC1692D56A001407DE /* Supporting Files */,
+			);
+			path = ChartGrid;
+			sourceTree = "<group>";
+		};
+		283B12CC1692D56A001407DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				282ED3EE186AC07500EBACB8 /* ChartGrid-Info.plist */,
+				282ED3EF186AC07500EBACB8 /* ChartGrid-Prefix.pch */,
+				282ED3F0186AC07500EBACB8 /* chartIndexColorList.plist */,
+				282ED3F1186AC07500EBACB8 /* floatback.png */,
+				282ED3F2186AC07500EBACB8 /* floatclose.png */,
+				282ED3F3186AC07500EBACB8 /* indexColCellHL.png */,
+				282ED3F4186AC07500EBACB8 /* indexColCellNL.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		283B12E81692D595001407DE /* ChartGridWidget */ = {
+			isa = PBXGroup;
+			children = (
+				282ED3CF186AC02900EBACB8 /* ChartView.h */,
+				282ED3D0186AC02900EBACB8 /* ChartView.m */,
+				282ED3D3186AC02900EBACB8 /* GridView.h */,
+				282ED3D4186AC02900EBACB8 /* GridView.m */,
+			);
+			name = ChartGridWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		283B12C01692D56A001407DE /* ChartGrid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 283B12E51692D56A001407DE /* Build configuration list for PBXNativeTarget "ChartGrid" */;
+			buildPhases = (
+				283B12BD1692D56A001407DE /* Sources */,
+				283B12BE1692D56A001407DE /* Frameworks */,
+				283B12BF1692D56A001407DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChartGrid;
+			productName = ChartGrid;
+			productReference = 283B12C11692D56A001407DE /* ChartGrid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		283B12B81692D56A001407DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = umpay;
+			};
+			buildConfigurationList = 283B12BB1692D56A001407DE /* Build configuration list for PBXProject "ChartGrid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 283B12B61692D56A001407DE;
+			productRefGroup = 283B12C21692D56A001407DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				283B12C01692D56A001407DE /* ChartGrid */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		283B12BF1692D56A001407DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				282ED3E6186AC05B00EBACB8 /* Default-568h@2x.png in Resources */,
+				282ED3E7186AC05B00EBACB8 /* Default.png in Resources */,
+				282ED3E8186AC05B00EBACB8 /* Default@2x.png in Resources */,
+				282ED3EB186AC05B00EBACB8 /* IndexViewCell.xib in Resources */,
+				282ED3ED186AC05B00EBACB8 /* ViewController.xib in Resources */,
+				282ED3F7186AC07500EBACB8 /* chartIndexColorList.plist in Resources */,
+				282ED3F8186AC07500EBACB8 /* floatback.png in Resources */,
+				282ED3F9186AC07500EBACB8 /* floatclose.png in Resources */,
+				282ED3FA186AC07500EBACB8 /* indexColCellHL.png in Resources */,
+				282ED3FB186AC07500EBACB8 /* indexColCellNL.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		283B12BD1692D56A001407DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				282ED3D5186AC02900EBACB8 /* ChartView.m in Sources */,
+				282ED3D7186AC02900EBACB8 /* GridView.m in Sources */,
+				282ED3E5186AC05B00EBACB8 /* AppDelegate.m in Sources */,
+				282ED3EA186AC05B00EBACB8 /* IndexViewCell.m in Sources */,
+				282ED3EC186AC05B00EBACB8 /* ViewController.m in Sources */,
+				282ED3FC186AC07500EBACB8 /* main.m in Sources */,
+				282ED40C186AC3EE00EBACB8 /* GetChartIndexColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		283B12E31692D56A001407DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		283B12E41692D56A001407DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: john zhou (J2C94R86H2)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		283B12E61692D56A001407DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: john zhou (J2C94R86H2)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartGrid/ChartGrid-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ChartGrid/ChartGrid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		283B12E71692D56A001407DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: john zhou (J2C94R86H2)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChartGrid/ChartGrid-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/ChartGrid/ChartGrid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		283B12BB1692D56A001407DE /* Build configuration list for PBXProject "ChartGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283B12E31692D56A001407DE /* Debug */,
+				283B12E41692D56A001407DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		283B12E51692D56A001407DE /* Build configuration list for PBXNativeTarget "ChartGrid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283B12E61692D56A001407DE /* Debug */,
+				283B12E71692D56A001407DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 283B12B81692D56A001407DE /* Project object */;
+}
