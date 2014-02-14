@@ -383,14 +383,23 @@
 #pragma mark GridViewDelegate
 
 //得到选中的行的颜色。如果没有或者返回为nill则没有选中的行和列颜色。
-/*-(UIColor*) gridView:(GridView*)aGridView colorAtRow:(NSInteger)aRowIndex
+-(UIColor*) gridView:(GridView*)aGridView colorAtRow:(NSInteger)aRowIndex
 {
-    return nil;
+    if (aRowIndex %2 == 0)
+    {
+        return  [UIColor grayColor];
+    }
+    else
+    {
+        return [UIColor darkGrayColor];
+    }
+    
 }
 //选中的行的背景颜色。
+/*
 -(UIColor*) selectedRowColorInGridView:(GridView*)aGridView
 {
-    return nil;
+    return [UIColor lightGrayColor];
 }
 //选中列的背景颜色
 -(UIColor*) selectedColColorInGridView:(GridView*)aGridView
@@ -408,18 +417,26 @@
 //在某个列上单击了某行。
 -(void) gridView:(GridView*)aGridView clickAtRow:(NSInteger)aRowIndex atCol:(NSInteger)aColIndex
 {
-    
+  
 }
 
 //双击某行
 -(void) gridView:(GridView *)aGridView doubleClickAtRow:(NSInteger)aRowIndex
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"单击列标题" message:[NSString stringWithFormat:@"您双击了第%d行", aRowIndex] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     
+    [alert show];
+    [alert release];
 }
 
 //单击某列标题
 -(void)gridView:(GridView *)aGridView clickAtCol:(NSInteger)aColIndex
 {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"单击列标题" message:[NSString stringWithFormat:@"您单击了第%d列", aColIndex] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    
+    [alert show];
+    [alert release];
     
 }
 
@@ -449,6 +466,15 @@
         
         if (i != 0)
             col.alignment = UITextAlignmentRight;
+        else
+        {
+            Col *scol = Col.new;
+            scol.name = @"地市";
+            scol.parentCol = col;
+            scol.width = col.width;
+            col.subCols = [@[scol] mutableCopy];
+            [scol release];
+        }
         
         
         
@@ -548,6 +574,7 @@
     [self.chartViewChart reloadData];
 }
 
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"OrganizationCell";
@@ -561,6 +588,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
+    
+    cell.contentView.userInteractionEnabled = NO;
     
     NSInteger firstIndex = 2*indexPath.row;
     NSInteger secondIndex = firstIndex+1;
@@ -617,6 +646,7 @@
         
         cell.rightLabel.text =  [((NSArray*)[rows objectAtIndex:0]) objectAtIndex:secondIndex + 1];
     }
+    
     
     return cell;
 }
