@@ -25,8 +25,9 @@
     self = [super init];
     if (self != nil)
     {
-        self.name = nil;
         self.width = 0;
+
+        self.name = nil;
         self.alignment = NSTextAlignmentCenter;
         NSMutableArray *array = [[NSMutableArray alloc] init];
         self.subCols = array;
