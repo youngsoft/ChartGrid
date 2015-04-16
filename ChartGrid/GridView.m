@@ -27,10 +27,9 @@
     {
         self.name = nil;
         self.width = 0;
-        self.alignment = UITextAlignmentCenter;
+        self.alignment = NSTextAlignmentCenter;
         NSMutableArray *array = [[NSMutableArray alloc] init];
         self.subCols = array;
-        [array release];
         self.image = nil;
         self.type = 0;
         self.indentation = 0;
@@ -47,7 +46,6 @@
     self.subCols = nil;
     self.image = nil;
     
-    [super dealloc];
 }
 
 
@@ -99,7 +97,7 @@
     _gridDelegate = nil;
     _selectedColIndex = -1;
     _selectedRowIndex = -1;
-    _columns = [[NSArray array] retain];
+    _columns = [NSArray array];
     self.fixedColCount = 0;
     _rowCount = 0;
     _colCount = 0;
@@ -128,6 +126,17 @@
     self.delegate  = self;
     self.bounces = NO;
 
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self construct];
+    }
+    
+    return self;
 }
 
 -(id)initWithFrame:(CGRect)frame
@@ -203,23 +212,16 @@
     }
 }
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    [self construct];
-}
 
 - (void)layoutSubviews
 {
     [self setNeedsDisplay];
 }
 
+
 -(void)dealloc
 {
-    [_allColArray release];
     self.delegate = nil;
-    [_columns release];
     self.colLineColor = nil;
     self.rowLineColor = nil;
     self.titleFont = nil;
@@ -230,7 +232,6 @@
     self.cellColor = nil;
     self.cellFont  = nil;
     
-    [super dealloc];
 }
 
 
@@ -355,10 +356,10 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                 newrect = CGRectMake(rect.origin.x+coldata.indentation, rect.origin.y, width, rect.size.height);  
             }
         }
-        UITextAlignment alignment;
+        NSTextAlignment alignment;
         if (type == 1 || type == 2)
         {
-            alignment = UITextAlignmentCenter;   
+            alignment =  NSTextAlignmentCenter; //UITextAlignmentCenter;
         }
         else
         {
@@ -366,7 +367,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
         }
          
         CGContextSetFillColorWithColor(ctx, textColor.CGColor);
-        [text drawInRect:CGRectMake(newrect.origin.x, newrect.origin.y + (newrect.size.height - textFont.xHeight -textFont.capHeight)/2.0, newrect.size.width, textFont.xHeight) 
+        [text drawInRect:CGRectMake(newrect.origin.x, newrect.origin.y + (newrect.size.height - textFont.xHeight -textFont.capHeight)/2.0, newrect.size.width, textFont.xHeight)
                 withFont:textFont
            lineBreakMode:coldata.lineBreakMode
                alignment:alignment];
@@ -572,7 +573,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
    endBindColIndex:(NSInteger)endBindColIndex
       xStartOffset:(CGFloat)xStartOffset
           rowblock:(void(^)(NSInteger rowIndex))rowblock
-         cellblock:(void(^)(Col *col, NSInteger rowIndex, NSInteger colIndex, CGRect rect))cellblock
+         cellblock:(void(^)(Col *col, NSInteger rowIndex, NSInteger colIndex, CGRect *prect))cellblock
 {
     
     CGFloat topInset = self.contentInset.top;
@@ -619,11 +620,13 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                 
                 if (colIndex < _allfixSubColCount && xOffset > 0)
                 {
-                    cellblock(col, rowIndex, colIndex, CGRectMake(xCellOffset + xOffset, yCellOffset + rowIndex * self.rowHeight, col.width, self.rowHeight));
+                    CGRect rc  = CGRectMake(xCellOffset + xOffset, yCellOffset + rowIndex * self.rowHeight, col.width, self.rowHeight);
+                    cellblock(col, rowIndex, colIndex, &rc);
                 }
                 else
                 {
-                    cellblock(col, rowIndex, colIndex, CGRectMake(xCellOffset , yCellOffset + rowIndex * self.rowHeight, col.width, self.rowHeight)); 
+                    CGRect rc = CGRectMake(xCellOffset , yCellOffset + rowIndex * self.rowHeight, col.width, self.rowHeight);
+                    cellblock(col, rowIndex, colIndex, &rc);
                 }
                 
             }
@@ -700,7 +703,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                 
                                 
             }
-                cellblock:^(Col *col, NSInteger rowIndex, NSInteger colIndex, CGRect rect) {
+                cellblock:^(Col *col, NSInteger rowIndex, NSInteger colIndex, CGRect *prect) {
                     
                     
                     //先绘制视图。
@@ -723,8 +726,8 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                         
                         //if (rect.origin.y > yOffset
                         
-                        if ((rect.origin.y >=  yOffset - 10) &&
-                            (rect.origin.x >= xOffset - 10) &&
+                        if ((prect->origin.y >=  yOffset - 10) &&
+                            (prect->origin.x >= xOffset - 10) &&
                             [_dataSource respondsToSelector:@selector(gridView:viewFromRow:viewFromCol:)])
                             cellView = [_dataSource gridView:self viewFromRow:rowIndex viewFromCol:colIndex]; 
                     }
@@ -732,7 +735,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                     //如果有视图则先画视图。
                     if (cellView != nil)
                     {
-                        cellView.frame = rect;
+                        cellView.frame = *prect;
                         cellView.tag = 100 + rowIndex; //行和列的结合体。
                         [self addSubview:cellView];
                     }
@@ -747,6 +750,15 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
                     
                     if (backgroundColor == nil)
                         backgroundColor = _cellBackgroundColor;
+                    
+                    if (backgroundColor == nil)
+                    {
+                        if (_gridDelegate != nil && [_gridDelegate respondsToSelector:@selector(gridView:colorAtRow:atCol:)])
+                        {
+                            backgroundColor = [_gridDelegate gridView:self colorAtRow:rowIndex atCol:colIndex];
+                        }
+                        
+                    }
                     
                     
                     //取图片
@@ -766,13 +778,18 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
 //                            textColor:self.cellColor 
 //                             textFont:self.cellFont 
 //                        textAlignment:col.alignment];
+                    
+                    
+                    //检查是否单元格有特定的颜色。
+                    
+                    
                     [self drawContent:ctx 
-                                 rect:rect
+                                 rect:*prect
                   rectBackgroundColor:backgroundColor
-                                image:nil 
+                                image:image
                                  text:[_dataSource gridView:self cellFromRow:rowIndex cellFromCol:colIndex]
-                            textColor:self.titleColor 
-                             textFont:self.titleFont
+                            textColor:self.cellColor
+                             textFont:self.cellFont
                               colData:col
                                  type:0];  
                     
@@ -862,6 +879,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
     CGContextClipToRect(ctx, CGRectMake(xOffset + xClipOffset,  yOffset + yClipOffset, self.contentSize.width, self.contentSize.height));
     //这边绘制固定的列，_allfixSubColCount为所有的固定列，固定的单个col（没有subcol的col）
     xClipOffset = [self drawCellHelper:ctx rect:rect1 xStartOffset:xClipOffset startBindColIndex:0 endBindColIndex:_allfixSubColCount];
+ 
     
     //重新设置裁剪区域。绘制可变部分
     CGContextClipToRect(ctx, CGRectMake(xOffset + xClipOffset,  yOffset + yClipOffset, self.contentSize.width, self.contentSize.height));
@@ -949,7 +967,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
     CGContextSaveGState(ctx);
     [self drawTitle:ctx rect:rect];
     CGContextRestoreGState(ctx);
-    
+
     //画格子部分
     CGContextSaveGState(ctx);
     [self drawCell:ctx rect:rect];
@@ -1004,17 +1022,13 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
 
 -(void)drawRect:(CGRect)rect
 {    
-    
     if (_columns.count <fixedColCount)
     {
         return;
     }
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    UIGraphicsPushContext(ctx);
-    
-    UIGraphicsBeginImageContext(rect.size);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0f);
     
     CGContextRef ctx1 = UIGraphicsGetCurrentContext();
     
@@ -1031,13 +1045,12 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
     UIImage *ii = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    UIGraphicsPopContext();
-    
     CGContextDrawImage(ctx, rect, ii.CGImage);
     
-    
+ 
     
 }
+ 
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -1169,10 +1182,7 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
         return;
     
     //得到列数组
-    if (_columns != nil)
-    {
-        [_columns release];  
-    }
+   
     
     _columns = [[_dataSource columnsInGridView:self] copy];
     
@@ -1366,6 +1376,57 @@ rectBackgroundColor:(UIColor*)rectBackgroundColor
     
     return index;
 }
+
+-(CGRect) rectForRow:(NSInteger)aRowIndex col:(NSInteger)aColIndex
+{
+ /*   CGFloat topInset = self.contentInset.top;
+    CGFloat leftInset = self.contentInset.left;
+    
+    CGFloat xOffset = self.contentOffset.x + leftInset;
+    CGFloat yOffset = self.contentOffset.y + topInset;
+    
+    
+    CGFloat xClipOffset = 0;
+    CGFloat yClipOffset = self.isFixedTitle ? _allTitleHeight : 0;
+    
+    
+    
+    //这边绘制固定的列，_allfixSubColCount为所有的固定列，固定的单个col（没有subcol的col）
+    xClipOffset = [self drawCellHelper:ctx rect:rect1 xStartOffset:xClipOffset startBindColIndex:0 endBindColIndex:_allfixSubColCount];
+    
+    
+    //重新设置裁剪区域。绘制可变部分
+    CGContextClipToRect(ctx, CGRectMake(xOffset + xClipOffset,  yOffset + yClipOffset, self.contentSize.width, self.contentSize.height));
+    
+    NSInteger strartColIndex = _allfixSubColCount;
+    NSInteger endColIndex = _allColArray.count;
+    
+    //根据当前的contentoffset来判断应该从那个列开始画起，这边只画不固定的部分
+    NSInteger limitStart = [self getLimitColIndexWithPoint:(NSInteger)xOffset];
+    if (limitStart  > strartColIndex)
+    {
+        strartColIndex = limitStart ;
+    }
+    
+    NSInteger limitEnd = [self getLimitColIndexWithPoint:(NSInteger)(xOffset+self.frame.size.width)];
+    endColIndex = limitEnd+1;
+    if (limitEnd +1 > _allColArray.count)
+    {
+        endColIndex = _allColArray.count;
+    }
+    
+    //根据开始列，求出画列开始的位置，由于做了修改
+    xClipOffset = [self getStratxwithStratColIndex:strartColIndex];
+    //    NSLog(@"newxClipOffset%0.2f",xClipOffset);
+    
+    //这边从xClipOffset开始画，strartColIndex为开始画的列，endColIndex为最后的列
+    xClipOffset = [self drawCellHelper:ctx rect:rect1 xStartOffset:xClipOffset startBindColIndex:strartColIndex endBindColIndex:endColIndex];*/
+    
+    return CGRectZero;
+    
+
+}
+
 
 #pragma mark -scrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

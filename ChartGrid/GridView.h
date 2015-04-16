@@ -12,8 +12,8 @@
 }
 
 @property(nonatomic, retain) NSString *name;
-@property(nonatomic, assign) NSInteger width;
-@property(nonatomic, assign) UITextAlignment alignment;
+@property(nonatomic, assign) CGFloat width;
+@property(nonatomic, assign) NSTextAlignment alignment;
 @property(nonatomic, retain) NSMutableArray *subCols;  //子列
 @property(nonatomic, retain) UIImage *image;    //列的图片。
 @property(nonatomic, assign) NSInteger type; // 列的类型。0为文本，1为视图。
@@ -38,6 +38,10 @@
 -(UIColor*) selectedColColorInGridView:(GridView*)aGridView;
 //选中标题的背景色
 -(UIColor*) selectedTitleColorInGridView:(GridView*)aGridView;
+//正常情况下每个格子的颜色，如果不设置则按行的活着选择列的活着选择行的颜色来制定，如果设置了则按这个来。
+//如果返回空则不考虑这个颜色。
+-(UIColor*)gridView:(GridView *)aGridView colorAtRow:(NSInteger)aRowIndex atCol:(NSInteger)aColIndex;
+
 
 
 
@@ -88,19 +92,6 @@
 
 @interface GridView:UIScrollView <UIScrollViewDelegate>
 {
-    id<GridViewDataSource> _dataSource;
-    id<GridViewDelegate> _gridDelegate;
-    
-    //列信息。
-    NSArray *_columns;
-    NSInteger _rowCount;
-    NSInteger _colCount;
-    
-    
-    //选中的行
-    NSInteger _selectedRowIndex;
-    //选中的列,
-    NSInteger _selectedColIndex;
     
     
     
@@ -235,6 +226,9 @@
 
 //根据绑定列，已级绑定列内的索引得到真实的列索引。
 -(NSInteger) getColumnIndexFromBindColIndex:(NSInteger)aBindColIndex subColIndex:(NSInteger)aSubColIndex;
+
+//得到某行某列的位置。
+-(CGRect) rectForRow:(NSInteger)aRowIndex col:(NSInteger)aColIndex;
 
 @end
 
