@@ -182,6 +182,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = umpay;
+				TargetAttributes = {
+					283B12C01692D56A001407DE = {
+						DevelopmentTeam = 9JJMH944SE;
+					};
+				};
 			};
 			buildConfigurationList = 283B12BB1692D56A001407DE /* Build configuration list for PBXProject "ChartGrid" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -294,14 +299,14 @@
 		283B12E61692D56A001407DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: john zhou (J2C94R86H2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Wei (YX8BC3YQ54)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lin Wei (YX8BC3YQ54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChartGrid/ChartGrid-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ChartGrid/ChartGrid-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				PROVISIONING_PROFILE = "1aca9cfb-5596-4555-9170-f4ccce2ab7a3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1aca9cfb-5596-4555-9170-f4ccce2ab7a3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -309,13 +314,13 @@
 		283B12E71692D56A001407DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: john zhou (J2C94R86H2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: john zhou (J2C94R86H2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lin Wei (YX8BC3YQ54)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lin Wei (YX8BC3YQ54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ChartGrid/ChartGrid-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ChartGrid/ChartGrid-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3225BACD-43C5-439B-8806-60A53C0FCA59";
+				PROVISIONING_PROFILE = "1aca9cfb-5596-4555-9170-f4ccce2ab7a3";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3225BACD-43C5-439B-8806-60A53C0FCA59";
 				WRAPPER_EXTENSION = app;
 			};
