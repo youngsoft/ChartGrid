@@ -1,0 +1,10 @@
+
+*.xccheckout
+
+*.xcuserstate
+
+ChartGrid.xcodeproj/project.xcworkspace/xcshareddata/ChartGrid.xccheckout
+
+*.pbxproj
+
+*.xcuserstate
